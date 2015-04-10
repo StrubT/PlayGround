@@ -1,6 +1,6 @@
 ﻿using c = System.Console;
 
-namespace ThS.PlayGround.CSharpConsole {
+namespace StrubT.PlayGround.CSharpConsole {
 
 	public class ReferenceAndValueTypes : IRunnable {
 

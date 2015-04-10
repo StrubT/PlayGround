@@ -1,5 +1,5 @@
 ﻿
-namespace ThS.PlayGround.CSharpConsole {
+namespace StrubT.PlayGround.CSharpConsole {
 
 	public interface IRunnable {
 
