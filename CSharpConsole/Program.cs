@@ -15,7 +15,7 @@ namespace StrubT.PlayGround.CSharpConsole {
 			foreach(var runnable in runnables) {
 				c.WriteLine("*** {0} ***", runnable.Name);
 				c.WriteLine();
-				((IRunnable)runnable.GetConstructor(new Type[] { }).Invoke(new object[] { })).run();
+				((IRunnable)runnable.GetConstructor(new Type[] { }).Invoke(new object[] { })).Run();
 				c.WriteLine();
 				c.WriteLine();
 			}
