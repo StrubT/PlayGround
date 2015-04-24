@@ -10,14 +10,18 @@ namespace StrubT.PlayGround.CSharpConsole {
 		public static void Main() {
 
 			var assembly = Assembly.GetAssembly(typeof(IRunnable));
-			var runnables = assembly.GetTypes().Where(t => !t.IsInterface && typeof(IRunnable).IsAssignableFrom(t));
+			var runnableTypes = assembly.GetTypes().Where(t => !t.IsInterface && typeof(IRunnable).IsAssignableFrom(t));
 
-			foreach(var runnable in runnables) {
-				c.WriteLine("*** {0} ***", runnable.Name);
-				c.WriteLine();
-				((IRunnable)runnable.GetConstructor(new Type[] { }).Invoke(new object[] { })).Run();
-				c.WriteLine();
-				c.WriteLine();
+			foreach (var runnableType in runnableTypes) {
+				var runnable = (IRunnable)runnableType.GetConstructor(new Type[] { }).Invoke(new object[] { });
+
+				if (runnable.IsActive()) {
+					c.WriteLine("*** {0} ***", runnableType.Name);
+					c.WriteLine();
+					runnable.Run();
+					c.WriteLine();
+					c.WriteLine();
+				}
 			}
 		}
 	}

@@ -4,6 +4,8 @@ namespace StrubT.PlayGround.CSharpConsole {
 
 	public class ReferenceAndValueTypes : IRunnable {
 
+		public bool IsActive() { return false; }
+
 		public void Run() {
 
 			var referenceType = new ReferenceType();
