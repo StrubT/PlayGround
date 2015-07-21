@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.ServiceModel;
 using System.ServiceModel.Description;
 using System.ServiceModel.Web;
-using System.Threading;
 
 namespace StrubT.PlayGround.CSharpConsole {
 
@@ -39,30 +36,30 @@ namespace StrubT.PlayGround.CSharpConsole {
 
 		[OperationContract]
 		[WebGet(UriTemplate = "dateTime", ResponseFormat = WebMessageFormat.Json)]
-		DateTime getDateTime();
+		DateTime GetDateTime();
 
 		[OperationContract]
 		[WebGet(UriTemplate = "hostName", ResponseFormat = WebMessageFormat.Json)]
-		String getHostName();
+		string GetHostName();
 
 		[OperationContract]
 		[WebGet(UriTemplate = "userName", ResponseFormat = WebMessageFormat.Json)]
-		String getUserName();
+		string GetUserName();
 
 		[OperationContract]
 		[WebGet(UriTemplate = "specialFolders", ResponseFormat = WebMessageFormat.Json)]
-		Dictionary<string, string> getSpecialFolders();
+		Dictionary<string, string> GetSpecialFolders();
 	}
 
 	[ServiceBehavior(IncludeExceptionDetailInFaults = true)]
 	public class WebService : IWebService {
 
-		public DateTime getDateTime() { return DateTime.Now; }
+		public DateTime GetDateTime() { return DateTime.Now; }
 
-		public string getHostName() { return Environment.MachineName; }
+		public string GetHostName() { return Environment.MachineName; }
 
-		public string getUserName() { return Environment.UserName; }
+		public string GetUserName() { return Environment.UserName; }
 
-		public Dictionary<string, string> getSpecialFolders() { return Enum.GetValues(typeof(Environment.SpecialFolder)).Cast<Environment.SpecialFolder>().Distinct().ToDictionary(f => f.ToString(), f => Environment.GetFolderPath(f)); }
+		public Dictionary<string, string> GetSpecialFolders() { return Enum.GetValues(typeof(Environment.SpecialFolder)).Cast<Environment.SpecialFolder>().Distinct().ToDictionary(f => f.ToString(), f => Environment.GetFolderPath(f)); }
 	}
 }

@@ -18,28 +18,28 @@ namespace StrubT.PlayGround.CSharpConsole {
 			this.ChangeValueType(valueType);
 			this.ChangeValueTypeByReference(ref valueTypeByReference);
 
-			c.WriteLine("reference type:                       {0}changed", !referenceType.changed ? "NOT " : string.Empty);
-			c.WriteLine("reference type (passed by reference): {0}changed", !referenceTypeByReference.changed ? "NOT " : string.Empty);
-			c.WriteLine("value type:                           {0}changed", !valueType.changed ? "NOT " : string.Empty);
-			c.WriteLine("value type (passed by reference):     {0}changed", !valueTypeByReference.changed ? "NOT " : string.Empty);
+			c.WriteLine("reference type:                       {0}changed", !referenceType.Changed ? "NOT " : string.Empty);
+			c.WriteLine("reference type (passed by reference): {0}changed", !referenceTypeByReference.Changed ? "NOT " : string.Empty);
+			c.WriteLine("value type:                           {0}changed", !valueType.Changed ? "NOT " : string.Empty);
+			c.WriteLine("value type (passed by reference):     {0}changed", !valueTypeByReference.Changed ? "NOT " : string.Empty);
 		}
 
-		private void ChangeReferenceType(ReferenceType changeable) { changeable.changed = true; }
+		private void ChangeReferenceType(ReferenceType changeable) { changeable.Changed = true; }
 
-		private void ChangeReferenceTypeByReference(ref ReferenceType changeable) { changeable.changed = true; }
+		private void ChangeReferenceTypeByReference(ref ReferenceType changeable) { changeable.Changed = true; }
 
-		private void ChangeValueType(ValueType changeable) { changeable.changed = true; }
+		private void ChangeValueType(ValueType changeable) { changeable.Changed = true; }
 
-		private void ChangeValueTypeByReference(ref ValueType changeable) { changeable.changed = true; }
+		private void ChangeValueTypeByReference(ref ValueType changeable) { changeable.Changed = true; }
 	}
 
 	internal class ReferenceType {
 
-		public bool changed { get; set; }
+		public bool Changed { get; set; }
 	}
 
 	internal struct ValueType {
 
-		public bool changed { get; set; }
+		public bool Changed { get; set; }
 	}
 }
