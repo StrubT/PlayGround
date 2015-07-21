@@ -9,7 +9,7 @@ namespace StrubT.PlayGround.CSharpConsole {
 
 	public class WebServiceTest : IRunnable {
 
-		public bool IsActive() { return false; }
+		public bool IsActive() => false;
 
 		public void Run() {
 
@@ -54,12 +54,12 @@ namespace StrubT.PlayGround.CSharpConsole {
 	[ServiceBehavior(IncludeExceptionDetailInFaults = true)]
 	public class WebService : IWebService {
 
-		public DateTime GetDateTime() { return DateTime.Now; }
+		public DateTime GetDateTime() => DateTime.Now;
 
-		public string GetHostName() { return Environment.MachineName; }
+		public string GetHostName() => Environment.MachineName;
 
-		public string GetUserName() { return Environment.UserName; }
+		public string GetUserName() => Environment.UserName;
 
-		public Dictionary<string, string> GetSpecialFolders() { return Enum.GetValues(typeof(Environment.SpecialFolder)).Cast<Environment.SpecialFolder>().Distinct().ToDictionary(f => f.ToString(), f => Environment.GetFolderPath(f)); }
+		public Dictionary<string, string> GetSpecialFolders() => Enum.GetValues(typeof(Environment.SpecialFolder)).Cast<Environment.SpecialFolder>().Distinct().ToDictionary(f => f.ToString(), Environment.GetFolderPath);
 	}
 }
