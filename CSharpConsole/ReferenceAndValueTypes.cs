@@ -8,29 +8,39 @@ namespace StrubT.PlayGround.CSharpConsole {
 
 		public void Run() {
 
-			var referenceType = new ReferenceType();
-			var referenceTypeByReference = new ReferenceType();
-			var valueType = new ValueType();
-			var valueTypeByReference = new ValueType();
+			var i = 0;
+			var refTyp = new[] { new ReferenceType(), new ReferenceType(), new ReferenceType(), new ReferenceType() };
+			ChangeReferenceType0(refTyp[0]);
+			ChangeReferenceType1(refTyp[1]);
+			ChangeReferenceType2(ref refTyp[2]);
+			ChangeReferenceType3(ref refTyp[3]);
+			foreach (var t in refTyp)
+				c.WriteLine("test #{0}: {1}changed", ++i, !t.Changed ? "NOT " : string.Empty);
 
-			ChangeReferenceType(referenceType);
-			ChangeReferenceTypeByReference(ref referenceTypeByReference);
-			ChangeValueType(valueType);
-			ChangeValueTypeByReference(ref valueTypeByReference);
-
-			c.WriteLine("reference type:                       {0}changed", !referenceType.Changed ? "NOT " : string.Empty);
-			c.WriteLine("reference type (passed by reference): {0}changed", !referenceTypeByReference.Changed ? "NOT " : string.Empty);
-			c.WriteLine("value type:                           {0}changed", !valueType.Changed ? "NOT " : string.Empty);
-			c.WriteLine("value type (passed by reference):     {0}changed", !valueTypeByReference.Changed ? "NOT " : string.Empty);
+			var valTyp = new[] { new ValueType(), new ValueType(), new ValueType(), new ValueType() };
+			ChangeValueType0(valTyp[0]);
+			ChangeValueType1(valTyp[1]);
+			ChangeValueType2(ref valTyp[2]);
+			ChangeValueType3(ref valTyp[3]);
+			foreach (var t in valTyp)
+				c.WriteLine("test #{0}: {1}changed", ++i, !t.Changed ? "NOT " : string.Empty);
 		}
 
-		private void ChangeReferenceType(ReferenceType changeable) => changeable.Changed = true;
+		private void ChangeReferenceType0(ReferenceType changeable) => changeable.Changed = true;
 
-		private void ChangeReferenceTypeByReference(ref ReferenceType changeable) => changeable.Changed = true;
+		private void ChangeReferenceType1(ReferenceType changeable) => changeable = new ReferenceType() { Changed = true };
 
-		private void ChangeValueType(ValueType changeable) => changeable.Changed = true;
+		private void ChangeReferenceType2(ref ReferenceType changeable) => changeable.Changed = true;
 
-		private void ChangeValueTypeByReference(ref ValueType changeable) => changeable.Changed = true;
+		private void ChangeReferenceType3(ref ReferenceType changeable) => changeable = new ReferenceType() { Changed = true };
+
+		private void ChangeValueType0(ValueType changeable) => changeable.Changed = true;
+
+		private void ChangeValueType1(ValueType changeable) => changeable = new ValueType() { Changed = true };
+
+		private void ChangeValueType2(ref ValueType changeable) => changeable.Changed = true;
+
+		private void ChangeValueType3(ref ValueType changeable) => changeable = new ValueType() { Changed = true };
 	}
 
 	internal class ReferenceType {
