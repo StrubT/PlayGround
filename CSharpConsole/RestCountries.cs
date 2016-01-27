@@ -13,7 +13,7 @@ namespace StrubT.PlayGround.CSharpConsole {
 
 	public class RestCountries : IRunnable {
 
-		public bool IsActive() => false;
+		public bool Active => false;
 
 		public void Run() {
 

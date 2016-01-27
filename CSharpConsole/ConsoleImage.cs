@@ -8,7 +8,7 @@ namespace StrubT.PlayGround.CSharpConsole {
 
 	public class ConsoleImage : IRunnable {
 
-		public bool IsActive() => false;
+		public bool Active => false;
 
 		public void Run() {
 

@@ -9,7 +9,7 @@ namespace StrubT.PlayGround.CSharpConsole {
 
 	public class WebServiceTest : IRunnable {
 
-		public bool IsActive() => false;
+		public bool Active => false;
 
 		public void Run() {
 

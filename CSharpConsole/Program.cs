@@ -15,7 +15,7 @@ namespace StrubT.PlayGround.CSharpConsole {
 			foreach (var runnableType in runnableTypes) {
 				var runnable = (IRunnable)runnableType.GetConstructor(new Type[] { }).Invoke(new object[] { });
 
-				if (runnable.IsActive()) {
+				if (runnable.Active) {
 					c.WriteLine("*** {0} ***", runnableType.Name);
 					c.WriteLine();
 					runnable.Run();

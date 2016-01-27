@@ -6,7 +6,7 @@ namespace StrubT.PlayGround.CSharpConsole {
 
 	public class AsyncAwait : IRunnable {
 
-		public bool IsActive() => false;
+		public bool Active => false;
 
 		public async void Run() {
 

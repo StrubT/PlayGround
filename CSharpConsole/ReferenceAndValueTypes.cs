@@ -4,7 +4,7 @@ namespace StrubT.PlayGround.CSharpConsole {
 
 	public class ReferenceAndValueTypes : IRunnable {
 
-		public bool IsActive() => false;
+		public bool Active => false;
 
 		public void Run() {
 
