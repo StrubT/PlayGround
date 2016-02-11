@@ -18,7 +18,10 @@ namespace StrubT.PlayGround.CSharpConsole {
 		public void Run() {
 
 			var col = c.ForegroundColor;
-			var key = File.ReadAllText("C:\\temp\\MashapeKey.txt");
+
+			c.Write("Enter a valid Mashape key: ");
+			var key = c.ReadLine();
+			c.WriteLine();
 
 			using (var web = new WebClient()) {
 

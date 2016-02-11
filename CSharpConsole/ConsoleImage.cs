@@ -20,6 +20,13 @@ namespace StrubT.PlayGround.CSharpConsole {
 			};
 
 			var backgroundColor = c.BackgroundColor;
+			var foregroundColor = c.ForegroundColor;
+
+			c.ForegroundColor = ConsoleColor.Red;
+			c.Write("please maximise your window!");
+			c.ReadLine();
+
+			c.ForegroundColor = foregroundColor;
 
 			//c.SetWindowPosition(0, 0);
 			var consoleWidth = c.WindowWidth /* = c.LargestWindowWidth*/;
