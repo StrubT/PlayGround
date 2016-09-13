@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>StrubT.PlayGround.CSharpConsole</RootNamespace>
     <AssemblyName>PlayGroundCSharpConsole</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
     <PublishUrl>publish\</PublishUrl>
@@ -70,7 +70,9 @@
   <ItemGroup>
     <Compile Include="AsyncAwait.cs" />
     <Compile Include="ConsoleImage.cs" />
+    <Compile Include="CSharp6.cs" />
     <Compile Include="Extensions.cs" />
+    <Compile Include="MachineEpsilon.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReferenceAndValueTypes.cs" />
