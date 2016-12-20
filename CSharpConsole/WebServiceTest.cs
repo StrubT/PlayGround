@@ -15,8 +15,9 @@ namespace StrubT.PlayGround.CSharpConsole {
 
 			using (var soap = new ServiceHost(typeof(WebService), new Uri("http://localhost:8079/soapService")))
 			using (var rest = new WebServiceHost(typeof(WebService), new Uri("http://localhost:8079/restService"))) {
-				var meta = soap.Description.Behaviors.Find<ServiceMetadataBehavior>() ?? new ServiceMetadataBehavior();
-				meta.HttpGetEnabled = true;
+				var meta = soap.Description.Behaviors.Find<ServiceMetadataBehavior>() ?? new ServiceMetadataBehavior() {
+					HttpGetEnabled = true
+				};
 				soap.Description.Behaviors.Add(meta);
 				soap.Open();
 

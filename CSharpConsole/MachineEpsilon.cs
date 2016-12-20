@@ -65,7 +65,7 @@ namespace StrubT.PlayGround.CSharpConsole {
 				throw new ArgumentException();
 
 			var fg = c.ForegroundColor;
-			for (int i = 0; i < formats.Length; i++) {
+			for (var i = 0; i < formats.Length; i++) {
 				c.ForegroundColor = colours[i] ?? fg;
 				c.Write(formats[i], arguments);
 			}
@@ -97,8 +97,8 @@ namespace StrubT.PlayGround.CSharpConsole {
 			if (float.IsNaN(value1) || float.IsInfinity(value1) || float.IsNaN(value2) || float.IsInfinity(value2)) return value1 == value2;
 			if (value1 == value2) return true;
 
-			int iValue1 = BitConverter.ToInt32(BitConverter.GetBytes(value1), 0);
-			int iValue2 = BitConverter.ToInt32(BitConverter.GetBytes(value2), 0);
+			var iValue1 = BitConverter.ToInt32(BitConverter.GetBytes(value1), 0);
+			var iValue2 = BitConverter.ToInt32(BitConverter.GetBytes(value2), 0);
 
 			// If the signs are different, return false except for +0 and -0.
 			if ((iValue1 >> 31) != (iValue2 >> 31))
@@ -112,8 +112,8 @@ namespace StrubT.PlayGround.CSharpConsole {
 			if (double.IsNaN(value1) || double.IsInfinity(value1) || double.IsNaN(value2) || double.IsInfinity(value2)) return value1 == value2;
 			if (value1 == value2) return true;
 
-			long lValue1 = BitConverter.DoubleToInt64Bits(value1);
-			long lValue2 = BitConverter.DoubleToInt64Bits(value2);
+			var lValue1 = BitConverter.DoubleToInt64Bits(value1);
+			var lValue2 = BitConverter.DoubleToInt64Bits(value2);
 
 			// If the signs are different, return false except for +0 and -0.
 			if ((lValue1 >> 63) != (lValue2 >> 63))
