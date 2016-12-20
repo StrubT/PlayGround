@@ -51,9 +51,8 @@
     <ApplicationIcon>StrubT.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -70,6 +69,7 @@
   <ItemGroup>
     <Compile Include="AsyncAwait.cs" />
     <Compile Include="ConsoleImage.cs" />
+    <Compile Include="CSharp7.cs" />
     <Compile Include="CSharp6.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="MachineEpsilon.cs" />
