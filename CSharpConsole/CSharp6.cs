@@ -8,6 +8,16 @@ namespace StrubT.PlayGround.CSharpConsole {
 
 		public void Run() {
 
+			// SOURCE: https://docs.microsoft.com/en-us/dotnet/articles/csharp/csharp-6 //
+
+			//Read - only Auto - properties
+			//Auto - Property Initializers
+			//Expression Bodied function members
+			//using static
+
+			//Null - conditional operators
+			//String Interpolation
+
 			var people = new[] {
 				null,
 				Tuple.Create("Strub", "Thomas Reto", new DateTime(1991, 11, 20)),
@@ -16,6 +26,13 @@ namespace StrubT.PlayGround.CSharpConsole {
 
 			foreach (var person in people)
 				Console.WriteLine($"{person?.Item1 ?? "-"}, {person?.Item2 ?? "-"} --- {person?.Item3:o}");
+
+			//Exception filters
+			//nameof Expressions
+			//await in catch and finally blocks
+			//index initializers
+			//Extension methods for collection initializers
+			//Improved overload resolution
 		}
 	}
 }
