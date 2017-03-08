@@ -47,8 +47,8 @@ namespace StrubT.PlayGround.CSharpConsole {
 
 				var bitmap = new Bitmap(image, size);
 
-				for (int y = 0; y < size.Height; y++) {
-					for (int x = 0; x < size.Width; x++) {
+				for (var y = 0; y < size.Height; y++) {
+					for (var x = 0; x < size.Width; x++) {
 						var color = bitmap.GetPixel(x, y);
 						var consoleColor = GetConsoleColor(color);
 
@@ -86,8 +86,7 @@ namespace StrubT.PlayGround.CSharpConsole {
 
 		private static ConsoleFont GetCurrentConsoleFont() {
 
-			ConsoleFont currentFont;
-			GetCurrentConsoleFont(GetStdHandle(StdHandle.OutputHandle), false, out currentFont);
+			GetCurrentConsoleFont(GetStdHandle(StdHandle.OutputHandle), false, out var currentFont);
 			return currentFont;
 		}
 		#endregion
@@ -105,7 +104,7 @@ namespace StrubT.PlayGround.CSharpConsole {
 					default: return ConsoleColor.White;
 				}
 
-			int hue = (int)Math.Round(color.GetHue() / 60, MidpointRounding.AwayFromZero);
+			var hue = (int)Math.Round(color.GetHue() / 60, MidpointRounding.AwayFromZero);
 			if (color.GetBrightness() < 0.4)
 
 				switch (hue) { //dark color
